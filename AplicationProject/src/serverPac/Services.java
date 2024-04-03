@@ -12,5 +12,6 @@ public interface Services {
 
     public void forwardVoiceCall();
 
+    public void showChatHistory();
 
 }

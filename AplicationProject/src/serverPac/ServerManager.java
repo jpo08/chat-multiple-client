@@ -18,7 +18,7 @@ public class ServerManager implements Services {
     @Override
     public void subscribe(String user, String ip, int port) {
         System.out.println("subscribe "+user+ " "+ ip + " "+ port);
-        Address a = new Address();
+        Address a = new Address(ip , port);
         a.ip = ip;
         a.port = port;
         users.put(user, a);
@@ -26,6 +26,7 @@ public class ServerManager implements Services {
 
     @Override
     public void createGroups() {
+
 
     }
 
@@ -53,6 +54,13 @@ public class ServerManager implements Services {
 
     @Override
     public void forwardVoiceCall() {
+
+    }
+
+    @Override 
+
+    public void showChatHistory(){
+
 
     }
 }
