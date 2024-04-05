@@ -196,5 +196,16 @@ public class ServerManager implements Services {
             e.printStackTrace();
         }
     }
+    @Override 
+    public void showChatHistory(){
+        try (BufferedReader reader = new BufferedReader(new FileReader("chat_history.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
