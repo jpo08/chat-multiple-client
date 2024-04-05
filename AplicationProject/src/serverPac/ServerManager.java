@@ -1,6 +1,8 @@
 package serverPac;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -58,9 +60,14 @@ public class ServerManager implements Services {
     }
 
     @Override 
-
     public void showChatHistory(){
-
-
+        try (BufferedReader reader = new BufferedReader(new FileReader("chat_history.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
